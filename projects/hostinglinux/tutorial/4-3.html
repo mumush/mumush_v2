@@ -1,0 +1,154 @@
+<div class="page-container">
+
+    <article class="tutorial">
+      
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-cloud"></i> DNS</h2>
+
+            <p>
+               DNS stands for Domain Name Service. It is what allows the use of domain names to access sites. A DNS Server converts an alphanumeric domain name into an IP address. The internet runs on IP addresses and DNS allows you to not have to remember every IP address to every site you visit. DNS is a network of machines, not just a single entity, that help each other. If one server doesn't know how to translate an domain into an IP IT asks another.
+            </p>
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-cog"></i> Configuring DNS using bind9</h2>
+
+            <p>
+                There are many DNS software options available to run your own on linux but the most widely used is BIND. For the purpose of this we will use bind9 because it is powerful and easy to configure.
+            </p>
+            
+            <p>
+                Enter this to install bind9 on your version of linux. (if using CentOS or Fedora use yum instead of apt-get and bind instead of bind9).
+            </p>
+            
+            <code class="exampleCode">apt-get install bind9 dnsutils</code>
+            
+            <p>
+                Next we need to add zones to point to. So go to the bind directory in etc/bind and edit named.conf.local and input the following at the bottom. Make sure to replace the domain with your own. Also enter your the first 3 parts of your ip in reverse where the zeroes are. This is the reverse lookup for your server.
+            </p>
+            
+            <code class="exampleCode">
+                zone "example.com" {
+                    type master;
+                    file "/etc/bind/zones/example.com.db";
+                };
+                <br />
+                zone "0.0.0.in-addr.arpa" {
+                    type master;
+                    file "/etc/bind/zones/rev.0.0.0.in-addr.arpa";
+                };
+            </code>
+            
+            <p>
+                Next the zones need to be actually created. Create a file in etc/bind/zone called example.com.db, replacing it with example.com with your domian name. The put the following code in it. Don't forget to replace the IP with yours and the example domain with yours.
+            </p>
+            
+            <code class="exampleCode">
+                $TTL 1h <br />
+                example.com.  IN      SOA     ns.example.com.        webadmin@example.com. ( <br />
+                            &emsp;       2009010910 ;serial<br />
+                            &emsp;       3600 ;refresh<br />
+                            &emsp;       3600 ;retry<br />
+                            &emsp;       3600 ;expire<br />
+                            &emsp;       3600 ;minimum TTL<br />
+                )<br />
+                <br />
+                example.com. IN  NS      ns.example.com. <br />
+                example.com. IN  MX      10      mail.example.com. <br />
+                example.com. IN  MX      20      mail.example.com.<br />
+                <br />
+                @       IN      A       192.168.0.50<br />
+                www     IN      A       192.168.0.50<br />
+                mail    IN      A       192.168.0.50<br />
+                ns 	IN 	A 	192.168.0.50<br />
+                <br />
+                example.com.     IN      TXT     "v=spf1 a mx ip4:192.168.0.50 -all"<br />
+                example.com.     IN      SPF     "v=spf1 a mx ip4:192.168.0.50 -all"<br />
+            </code>
+            <p>
+                And now for the reverse zone. Create the file in the same directory using this:
+            </p>
+            
+            <code class="exampleCode">
+                vi rev.0.168.192.in-addr.arpa
+            </code>
+            
+            <p>
+                Put this in it, again changing the domain and IP.
+            </p>
+            
+            <code class="exampleCode">
+                $TTL 1h <br />
+                @ IN SOA ns.example.com. webadmin@example.com. ( <br />
+                    &emsp;     2008112111 ;serial <br />
+                    &emsp;      3600 ;refresh <br />
+                    &emsp;      3600 ;retry <br />
+                    &emsp;      3600 ;expire <br />
+                    &emsp;      3600 ;minimum TTL <br />
+                )<br />
+                <br />
+                    &emsp;            IN      NS      ns.example.com. <br />
+                50  &emsp;            IN      PTR     example.com<br />
+            </code>
+            
+            <p>
+                Next we need to lock down your DNS server so everyone else can't use it as theres. Add this to the end of /etc/bind/named.conf.options and change the second ip to your internal one.
+            </p>
+            
+            <code class="exampleCode">
+                allow-recursion { 127.0.0.1; 0.0.0.0/0; };
+            </code>
+            
+            <p>
+                Finally restart it.
+            </p>
+            
+            <code class="exampleCode">
+                /etc/init.d/bind9 restart
+            </code>
+            
+            <p>
+                And then make it where it can connect to the outside world.
+            </p>
+            
+            <code class="exampleCode">
+                iptables -I INPUT -p udp -m udp --dport 53 -j ACCEPT <br />
+                iptables -I INPUT -p tcp -m tcp --dport 53 -j ACCEPT <br />
+                iptables-save > /etc/iptables-rules
+            </code>
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-globe"></i> Make Your Site Live</h2>
+
+            <p>
+                To make your site live all you have to do is register your domain. There are many options for doing so, but <a class="sectionLink" href="http://www.register.com/index.rcmx">Register.com</a> and <a class="sectionLink" href="http://www.godaddy.com/domains/search.aspx?ci=78118">GoDaddy</a> are by far the most popular options.
+            </p>
+            
+            <p>
+                Both of those providers offer you to use their DNS servers to point to your domain, but you do not need that option because you did it yourself. They also offer you the option of pointing to the DNS server of your choosing which would be the one that you created. Just input your public IP and your in business. Wait a couple days to make sure your DNS info spreads across the web.
+            </p>
+            <p>
+                Below is an image of what the dashboard would look like if you decided to use your host's DNS options.
+            </p>
+            <img src="assets/img/dnsdash.png" alt="DNS Dashboard" />
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+        
+            <ul class="sourcesList">
+                <li><i class="fa fa-thumb-tack"></i><a href="http://glonek.co.uk/linux-server/dns-bind9-configuration-howto/">Configure DNS</a></li>
+            </ul>
+
+        </section>
+
+    </article>
+</div>

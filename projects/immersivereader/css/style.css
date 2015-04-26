@@ -1,0 +1,183 @@
+body {
+
+	margin: 0;
+	padding: 0;
+
+	background: #fff;
+
+}
+
+#readerStoryWrapper {
+
+	margin: 4em 4em;
+}
+
+section {
+
+	margin: 0 auto;
+	margin-bottom: 12em;
+
+	max-width: 750px;
+}
+
+.sectionTitle {
+
+	font-family: "Open Sans";
+
+	font-size: 3.5em;
+
+	color: #565E6E;
+
+	border-bottom: 10px solid #60697B;
+
+	text-align: center;
+
+	margin-bottom: 1em;
+	padding-bottom: .5em;
+
+}
+
+.sectionBody {
+
+	font-family: "Merriweather";
+
+	font-weight: 300;
+	font-size: 1.3em;
+
+	line-height: 1.8em;
+
+	color: #33332D;
+
+}
+
+.sectionBody p {
+
+	text-indent: 1em;
+}
+
+.sectionBody a {
+
+	color: #33332D;
+	text-decoration: none;
+
+	border-bottom: 1px solid #33332D;
+
+}
+
+.sectionBody a:hover {
+
+	border-bottom-style: dashed;
+}
+
+.importantText {
+
+	font-weight: 400;
+
+}
+
+.videoExample {
+
+	display: block;
+	margin: 3em auto;
+
+}
+
+.videoRight {
+
+	width: 350px;
+
+	margin: 0;
+	padding: 0 1em;
+
+	float: right;
+
+}
+
+.postFigure {
+
+	display: block;
+
+	text-align: center;
+
+	margin: 3em 0;
+	padding: 0;
+
+}
+
+.postImgWithShadow {
+
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-o-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+}
+
+
+.postFigCaption {
+
+	margin-top: 1em;
+
+	font-size: .8em;
+
+	text-align: center;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 750px) {
+
+	section {
+
+		margin-bottom: 8em;
+	}
+
+	.sectionTitle {
+
+		font-size: 1.8em;
+
+		border-bottom-width: 5px;
+
+		padding-bottom: 1em;
+
+	}
+
+	.sectionBody {
+
+		font-size: 1em;
+
+	}
+
+	.postFigure {
+
+		display: block;
+
+		margin: 4em auto;
+
+	}
+
+	.postFigCaption {
+
+		font-size: .9em;
+		margin: 2em 0;
+		margin-top: .8em;
+	}
+
+	.videoExample {
+
+		width: 200px;
+	}
+
+	.videoRight {
+
+		float: none;
+
+		display: block;
+		margin: 4em auto;
+
+	}
+
+
+}
+
+

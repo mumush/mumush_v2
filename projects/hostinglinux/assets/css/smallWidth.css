@@ -1,0 +1,130 @@
+#nav-container {
+
+	display: none;
+
+}
+
+.page-container {
+
+	margin-left: 15px;
+
+	margin-top: 2%;
+
+}
+
+#pullOut {
+
+	cursor: pointer;
+
+	position: fixed;
+
+	top: 0%;
+	left: 0;
+
+	margin-top: 1%;
+
+	padding: 1%;
+
+	padding-left: 2.5%;
+	padding-right: 1.5%;
+
+	background: #0099CC;
+
+	border: 1px solid #0099CC;
+
+	border-radius: 1px 2px 2px 1px;
+
+	color: #004359;
+
+	font-size: 1.4em;
+
+	-webkit-transition: padding-left .15s ease-in-out;
+
+	-webkit-box-shadow: 3.5px 0px 2px -2px #616161;
+
+}
+
+#pullOut:hover {
+
+	color: #00394C;
+
+	padding-left: 3.5%;
+
+}
+
+#smallNavHeader {
+
+	display: block;
+
+	margin-top: 0%;
+	margin-left: 20%;
+
+	color: #404038;
+	font-family: 'Raleway';
+	font-size: 3.2em;
+	font-weight: 100;
+
+}
+
+#hiddenNav {
+
+	display: none;
+
+	position: fixed;
+
+	height: 100%;
+
+	margin-top: 4%; 
+
+	margin-left: -30%;
+
+}
+
+#hiddenNav ul {
+
+	list-style: none;
+
+}
+
+#hiddenNav ul li {
+
+	margin-bottom: 7%;
+
+}
+
+.sectionName {
+
+	color: #0099CC;
+
+	font-size: 1.3em;
+
+	font-weight: 100;
+	
+}
+
+
+#hiddenNav ul li a {
+
+	text-decoration: none;
+
+	color: #40AFD4;
+
+	font-size: 1.1em;
+
+	font-weight: 100;
+
+	padding-left: 4%;
+
+}
+
+#hiddenNav ul li a:hover {
+
+	color: #0B74E3;
+
+}
+
+footer {
+
+	margin-left: 15px;
+
+}

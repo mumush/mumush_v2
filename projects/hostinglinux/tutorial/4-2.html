@@ -1,0 +1,119 @@
+<div class="page-container">
+
+    <article class="tutorial">
+        <section class="tutorial-section">
+            <h2><i class="fa fa-desktop"></i>Why Apache?</h2>
+
+            <p>
+                Apache was chosen because of its wide availability and ease of use. The other options are good, but Apache covers the widest range of use cases for most people. Also Apache has a vast user base with many users that can offer their own insight.
+            </p>
+
+        </section>
+        <section class="tutorial-section">
+            <h2>Preparation</h2>
+
+            <p>
+            APR - There are a few requirements needed to install Apache on Linux. The Apache Portable Runtime or APR and APR-Util need to be installed if not already. Just <a class="sectionLink" href="http://apr.apache.org/">download</a> them and extract them in ./srclib/apr and ./srclib/apr-util respectively.
+            </p>
+            <p>
+            Time - Make Sure that your server keeps accurate timing. Parts of the HTTP protocol rely on the time of day so if there is a problem it could mess up the site.
+            </p>
+            <p>
+            Disk Space - You need 50MB of space for installation and after that you only need 10MB. You may need additional space for additional modules.
+            </p>
+            <p>
+            PCRE- Make Sure You also have the Perl-Compatible Regular Expressions Library installed. Your linux distro should have a port or package pre made for it if not already installed. Just <a class="sectionLink" href="https://www.google.com/search?q=pcre+package&oq=pcre+pack&aqs=chrome.1.69i57j0l3.17889j0j1&sourceid=chrome&ie=UTF-8&qscrl=1#q=pcre+package+linux&qscrl=1&safe=off">Google</a> it. 
+            </p>
+
+        </section>
+        <section class="tutorial-section">
+            <h2>Installing</h2>
+
+            <p>
+                Depending on your version of Linux the command to install Apache will either be:
+            </p>
+            
+            <code class="exampleCode">
+                sudo apt-get install apache2
+            </code>
+            <p>
+                Or this:
+            </p>
+            <code class="exampleCode">
+                # yum install httpd
+            </code>
+            <br />
+            <p>
+                There is also the harder way for those that neither of those options work for. This will work on all Unix based machines.
+            </p>
+            <p>
+                Running the following commands will download and install Apache on your machine.
+            </p>
+            <code class="exampleCode">
+                $ lynx http://httpd.apache.org/download.cgi <br />
+                $ gzip -d httpd-NN.tar.gz <br />
+                $ tar xvf httpd-NN.tar <br />
+                $ cd httpd-NN <br />
+                $ ./configure --prefix=PREFIX <br />
+                $ make <br />
+                $ make install
+            </code>
+
+        </section>
+        <section class="tutorial-section">
+            <h2>Optimization</h2>
+
+            <p>
+                To optimize Apache and and make it work to your needs you need to edit the configuration file.
+            </p>
+            <code class="exampleCode">
+                $ vi PREFIX/conf/httpd.conf
+            </code>
+            <p>
+                If you need help with anything the Apache <a class="sectionLink" href="http://httpd.apache.org/docs/2.2/">site</a> has extensive documentation on all things Apache.
+            </p>
+
+        </section>
+        <section class="tutorial-section">
+            <h2>Running</h2>
+
+            <p>
+                There are two ways to start the server depending on which method you installed it with.
+            </p>
+            <p>
+                1st way:
+            </p>
+            <code class="exampleCode">
+                # /etc/init.d/apache2 start
+            </code>
+            <p>
+                2nd way:
+            </p>
+            <code class="exampleCode">
+                # /etc/init.d/httpd start
+            </code>
+            <p>
+                Or if you did the harder method:
+            </p>
+            <code class="exampleCode">
+                $ PREFIX/bin/apachectl -k start
+            </code>
+            <p>
+                Finally you want to test if it's running properly by going to the site below on your server.
+            </p>
+            <code class="exampleCode">
+                http://localhost/
+            </code>  
+        </section>
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+
+            <ul class="sourcesList">
+               <li><i class="fa fa-thumb-tack"></i><a href="http://httpd.apache.org/docs/2.2/">Apache Documentation</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a href="http://www.cyberciti.biz/faq/linux-install-and-start-apache-httpd/">Linux Distro Command Differences</a></li>
+            </ul>
+
+        </section>
+    </article>
+</div>

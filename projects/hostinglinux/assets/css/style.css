@@ -1,0 +1,419 @@
+/* RESET AND MAKE ALL FONTS THE SAME */
+* {
+	padding: 0;
+	margin: 0;
+
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+html, body {
+	height: 100%;
+
+	background: #f2f2f2; /*rhoff37*/
+}
+
+nav ul li {
+	min-height: 25px;
+	max-height: 200px;
+	transition: .3s ease-out;
+}
+
+#navHeader {
+
+	font-weight: 100;
+	text-align: center;
+	padding-top: 2%;
+
+}
+
+#navHeader > a {
+
+	text-decoration: none;
+	color: #004359;
+	font-family: 'Raleway';
+	font-size: 2.4em;
+	font-weight: 100;
+
+	text-shadow: 0px 1px 5px #40AFD4;
+
+}
+
+#navHeader > a:hover {
+
+	color: #00394C;
+
+}
+
+#nav-container {
+	position: fixed;
+	float: left;
+	height: 100%;
+	width: 300px;
+
+	background: #0099CC; /*rhoff37*/
+
+	-webkit-transition: display 5s ease-in-out;
+
+}
+
+#innerNav {
+
+	margin-top: 10%;
+
+}
+
+.navSection {
+
+	position: relative;
+	display: block;
+
+	padding: 7%;
+
+	padding-left: 9%;
+
+	font-family: 'Roboto Condensed';
+	font-size: 1.6em;
+	color: #1E5465;
+
+	text-decoration: none;
+
+	font-weight: 100;
+
+}
+
+.navSection:hover {
+
+	color: #00394C;
+
+}
+
+.navHidden {
+
+	padding: 0;
+
+}
+
+.navHidden ul {
+
+	font-family: 'Roboto Condensed';
+
+}
+
+.navHidden > ul > li {
+
+	padding-left: 14%;
+
+	margin-bottom: 4%;
+
+}
+
+.navHidden ul li a {
+
+	font-family: 'Roboto Condensed';
+	font-size: 1.3em;
+	color: #1E5465;
+
+	text-decoration: none;
+
+	font-weight: 100;
+
+}
+
+.navHidden ul li a:hover {
+
+	color: #00394C;
+
+}
+
+
+.collapsed {
+
+	height: 70px;
+	overflow: hidden;
+
+}
+
+.expanded {
+
+	height: 180px;
+
+}
+
+.page-container {
+
+	padding-top: 0%;
+
+	margin-left: 340px;
+
+	margin-right: 3%;
+
+	-webkit-transition: margin-left .15s ease-in-out;
+	
+}
+
+.tutorial-section,.section-highlight {
+
+	margin-bottom: 2%;
+	padding: 2%;
+
+	font-family: 'Roboto Condensed';
+	font-weight: 100;
+	color: #404038;
+
+  background-color: #F6F6F6;
+  border: 1.5px solid #e3e3e3; /*e3e3e3*/
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+}
+
+.tutorial-section h2,
+.section-highlight h2 {
+
+	padding-left: 1%;
+	padding-bottom: 2%;
+
+	font-family: 'Raleway';
+	font-size: 3.1em;
+	font-weight: 100;
+
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.section-highlight h2 {
+
+	margin-bottom: 3%;
+
+}
+
+.section-highlight p {
+
+	text-indent: 2%;
+	font-size: 1.2em;
+
+}
+
+.section-highlight > a {
+
+	text-decoration: none;
+	color: #404038;
+
+}
+
+.section-highlight > a:hover {
+
+	color: #0099CC;
+
+}
+
+.tutorial-section p {
+
+	margin-bottom: 2%;
+	margin-top: 2%;
+
+	font-size: 1.1em;
+	text-indent: 2%;
+
+}
+
+.sectionLink {
+
+	text-decoration: underline;
+	color: #0099CC;
+
+}
+
+.sectionLink:hover {
+
+	text-decoration: none;
+
+}
+
+.number {
+
+	position: relative;
+	top: 0;
+	left: 0;
+
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+}
+
+.sourcesList {
+	
+	list-style: none;
+
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+.sourcesList li {
+
+	margin-bottom: 2%;
+
+}
+
+.sourcesList li i {
+
+	padding-right: 2%;
+
+	color: #404038;
+
+	font-size: 1.4em;
+}
+
+.sourcesList li a {
+
+	text-decoration: none;
+
+	color: #0099CC;
+	font-size: 1.3em;
+
+}
+
+.sourcesList li a:hover {
+
+	text-decoration: underline;
+
+}
+
+#commandsList {
+
+	list-style: none;
+
+	margin-top: 2%;
+
+	font-size: 1.1em;
+
+}
+
+#commandsList li {
+
+	margin-bottom: 1%;
+
+}
+
+.breakdown {
+
+	font-size: 3.1em;
+	font-weight: 100;
+
+	margin-bottom: 2%;
+
+}
+
+.breakdownList {
+
+	list-style: none;
+
+}
+
+.breakdownList li {
+
+	margin-bottom: 1%;
+	font-size: 1.2em;
+
+}
+
+#facebookBusiness {
+
+	list-style: none;
+
+}
+
+#facebookBusiness li {
+
+	margin-bottom: 1%;
+
+}
+
+#facebookBusiness li a {
+
+	padding-left: 1%;
+
+}
+
+.exampleCode {
+
+	display: block;
+
+	padding: 1.5%;
+
+	background: #eeffaa;
+
+	border: 1px solid #ccc;
+
+	border-radius: 2px;
+
+	font-size: 1.2em;
+
+}
+
+#scrollUp {
+
+	cursor: pointer;
+
+	position: fixed;
+	right: .9%;
+	bottom: 2%;
+
+	font-size: 1.9em;
+
+	color: #33332D;
+
+	opacity: 0;
+
+}
+
+#scrollUp:hover{
+
+	color: #000;
+
+}
+
+.keyword {
+
+	color: #FF4B19;
+
+}
+
+
+#disqus_thread {
+
+	margin-top: 10%;
+
+}
+
+
+footer {
+
+	margin-left: 350px;
+	margin-top: 3%;
+
+	font-weight: 100;
+	font-size: 1em;
+
+	color: #404038;
+
+}
+
+/*FOR SMALL WIDTH MEDIA QUERY*/
+
+#hiddenNav {
+
+	display: none;
+
+}
+
+#smallNavHeader {
+
+	display: none;
+
+}

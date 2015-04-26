@@ -1,0 +1,113 @@
+<div class="page-container">
+
+    <article class="tutorial">
+      
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-desktop"></i> Web Server Options</h2>
+
+            <p>
+                There are many options when choosing a platform for your web server. This tutorial is focused on lightweight open source options.
+                Some of the most widely used options are Apache, Lighttpd, and Nginx. Each option has 
+            </p>
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2>Apache</h2>
+
+            <p>
+                Initially released in 1995, this is the most popular web server across the entire World Wide Web, currently used by around 60% of web domains. Its released under an Apache License, which requires preservation of the copyright notices and disclaimers, but doesn't require modified versions to be distributed using the same license. Though most prevalent on Unix-like operating system, it also runs on Windows, Mac OS X, and others.
+            </p>
+
+            <p>
+                Common languages supported by the Apache server include Perl, Python, Tcl, and PHP. The core functionality of the server can be extended with modules to add server-side programming language support, authentication schemes, and other features.
+            </p>
+
+            <p>
+                When searching the web you'll find an endless slew of distributions and packages containing the Apache HTTP server along with other web applications, such as MySQL and PHP, for Linux, Windows, and other OSs. These can make it much easier to install and deploy a feature-rich web server.
+            </p>
+
+            <h3 class="breakdown">Breakdown</h3>
+
+            <ul class="breakdownList">
+                <li><i class="fa fa-plus"></i> Open source updates. it's constantly being updated and you can add functionality as it becomes available.</li>
+                <li><i class="fa fa-plus"></i> Apache is free.</li>
+                <li><i class="fa fa-plus"></i> Multi-platform support. Apache can be used on systems that have 80x86-series (i.e. Intel) processors running either Linux or NT as an OS, or on other computers running a Unix-type OS on a different processor</li>
+                <li><i class="fa fa-plus"></i> It is Popular. Apache is the most-used Web server software package in the world. As such, it's unlikely that further development of the software will ever cease.</li>
+                <li><i class="fa fa-minus"></i> If you try and go crazy with customizations it can be hard to find helpful documentation.</li>
+            </ul>
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2>Lighttpd</h2>
+
+            <p>
+                Lighttpd (pronounced "lighty") is the third most popular open source web server. This lightweight server was initially released in 2003 and currently serves less than 1% of web domains. It's licensed under a revised BSD license and runs on Unix and Linux.
+            </p>
+
+            <p>
+                Lighttpd is a lightweight server built for performance with a goal of handling ten thousand clients simultaneously. It also uses an event-driven (asynchronous) architecture.
+            </p>
+            
+            <h3 class="breakdown">Breakdown</h3>
+            
+            <ul class="breakdownList">
+                <li><i class="fa fa-plus"></i> Compared to Apache, it has a smaller CPU and memory usage. Since Lighttpd uses fewer resources per request than Apache alone, it can generally serve most static content faster than Apache.</li>
+                <li><i class="fa fa-plus"></i> Lighttpd has a better load-balancing than Apache</li>
+                <li><i class="fa fa-plus"></i> Lighttpd has easier configuration options compared to Apache</li>
+                <li><i class="fa fa-plus"></i> Lighttpd is recommended for static content, or dynamic content that is cached as a static page.</li>
+                <li><i class="fa fa-plus"></i> PHP has a better performance under Lighttpd due to its FastCGI module</li>
+                <li><i class="fa fa-plus"></i> Because of its FastCGI module, the server and application processes can be restarted independently which is important for busy websites</li>
+                <li><i class="fa fa-plus"></i> Also because of the FastCGI module, per-application security policies can be implemented</li>
+                <li><i class="fa fa-minus"></i> Lighttpd doesn't have support for .htaccess files which might break current security / functionality implementations for some of your applications (i.e. HTTP authentication)</li>
+                <li><i class="fa fa-minus"></i> Using Lighttpd will only support PHP running under FastCGI as opposed to running it as a module (mod_php) which might have additional implications for the application and server (PEAR modules won't work under FastCGI)</li>
+                <li><i class="fa fa-minus"></i> Lighttpd has some problems processing request headers (specifically CR anf LF) from browsers like Opera. For example, Opera under SSL will hang under Lighttpd.</li>
+                <li><i class="fa fa-minus"></i> Lighttpd is incompatible with Apache modules (i.e. mod_security), and has its own module repository. Lighttpd has a smaller module repository compared to apache, and has a limited community which might become a problem when needing support.</li>
+                <li><i class="fa fa-minus"></i> Lighttpd doesn't support some control panel applications like cPanel or Plesk and will require special configurations to run them</li>
+            </ul>
+
+        </section>
+
+        <section class="tutorial-section">
+
+            <h2>Nginx</h2>
+
+            <p>
+                Nginx (pronounced "engine X") is the second most popular open source web server currently on the Internet. Though development only started in 2002, its currently used by over 6% of web domains. It is a lightweight HTTP server, and can also serve as a reverse proxy and IMAP/POP3 proxy server. It's licensed under a BSD-like license. It runs on UNIX, GNU/Linux, BSD, Mac OS X, Solaris, and Windows.
+            </p>
+
+            <p>
+                Nginx was built with performance in mind, in particular to handle ten thousand clients simultaneously. Instead of using threads to handle requests, like traditional servers, Nginx uses an event-driven (asynchronous) architecture. Its more scalable and uses less, and more predictable, amounts of memory. In addition to the basic HTTP features, Nginx also supports name-based and IP-based virtual servers, keep-alive and pipelined connections, and FLV streaming. It can also be reconfigured and upgraded online without interruption of the client processing.
+            </p>
+
+            <h3 class="breakdown">Breakdown</h3>
+
+            <ul class="breakdownList">
+                <li><i class="fa fa-plus"></i> Higher performance when loading static pages.</li>
+                <li><i class="fa fa-plus"></i> Can support more clients with the same amount of resources as Apache.</li>
+                <li><i class="fa fa-minus"></i> It is comparably difficult to create modules for Nginx than the other options.</li>
+            </ul>
+            
+        </section>
+        
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+
+            <ul class="sourcesList">
+               <li><i class="fa fa-thumb-tack"></i><a href="http://www.linuxplanet.com/linuxplanet/reviews/7239/1">General Information</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a href="http://www.theonestopwebsiteshop.com/web-hosting/type-of-os.htm">Apache</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a href="http://jetlogs.org/2007/08/23/apache-vs-lighttpd-on-php/">Lighttpd</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a href="http://www.cubrid.org/blog/dev-platform/what-is-nginx/">Nginx</a></li>
+            </ul>
+
+        </section>
+
+       
+
+    </article>
+</div>

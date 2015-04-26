@@ -1,0 +1,280 @@
+body {
+
+	margin: 0;
+	padding: 0;
+
+	background: #fff;
+
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.portfolioLink {
+
+	font-family: "Open Sans";
+
+	position: fixed;
+	top: 2em;
+	left: 2em;
+
+	color: #B0B8C7;
+	font-size: 1em;
+
+	text-decoration: none;
+
+	vertical-align: middle;
+
+}
+
+.portfolioLink:hover {
+
+	color: #60697B;
+
+}
+
+#blogPosts {
+
+	margin: 4em 4em;
+
+}
+
+.postSection {
+
+	margin: 0 auto;
+	margin-bottom: 12em;
+
+	max-width: 750px;
+
+}
+
+.postTitle {
+
+	font-family: "Open Sans";
+
+	font-size: 3.5em;
+
+	color: #565E6E;
+
+	border-bottom: 10px solid #60697B;
+
+	text-align: center;
+
+	padding-bottom: .5em;
+
+}
+
+.postDate {
+
+	font-family: "Open Sans";
+
+	display: block;
+
+	margin-top: 1em;
+
+	font-size: .35em;
+
+	color: #60697B;
+
+}
+
+.postBody {
+
+	font-family: "Merriweather";
+
+	font-weight: 300;
+	font-size: 1.3em;
+
+	line-height: 1.8em;
+
+	color: #33332D;
+
+}
+
+.postBody p {
+
+	text-indent: 1em;
+}
+
+.postBody a {
+
+	color: #33332D;
+	text-decoration: none;
+
+	border-bottom: 1px solid #33332D;
+
+}
+
+.postBody a:hover {
+
+	border-bottom-style: dashed;
+}
+
+.postImportantText {
+
+	font-weight: 400;
+
+}
+
+.postCodeExample {
+
+	margin-left: 3em;
+	margin-bottom: 2em;
+
+	display: block;
+
+	font-size: .9em;
+
+}
+
+.postCompareFigures {
+
+	text-align: center;
+
+	margin: 3em auto;
+
+}
+
+.postCompareFigures figure {
+
+	display: inline-block;
+
+}
+
+.postFigure {
+
+	display: block;
+
+	text-align: center;
+
+	margin: 3em 0;
+	padding: 0;
+
+}
+
+.postImgWithShadow {
+
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-o-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+}
+
+.postImgRight {
+
+	margin: 0;
+	margin-left: 2em;
+	margin-bottom: 1em;
+
+	float: right;
+
+}
+
+.postImgLarge {
+
+	width: 80%;
+}
+
+.postFigCaption {
+
+	margin-top: 1em;
+
+	font-size: .8em;
+
+	text-align: center;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 1100px) {
+
+	.portfolioLink {
+
+		top: .5em;
+		left: 1em;
+
+		font-size: 1.4em;
+	}
+
+}
+
+@media all and (max-width: 750px) {
+
+	.portfolioLink {
+
+		font-size: 1.3em;
+	}
+
+	.postSection {
+
+		margin-bottom: 8em;
+	}
+
+	.postTitle {
+
+		font-size: 1.8em;
+
+		border-bottom-width: 5px;
+
+		padding-bottom: 1em;
+
+	}
+
+	.postDate {
+
+		margin-top: 1em;
+
+		font-size: .7em;
+
+	}
+
+	.postBody {
+
+		font-size: 1em;
+
+	}
+
+	.postFigure {
+
+		display: block;
+
+		margin: 4em auto;
+
+	}
+
+	.postFigCaption {
+
+		font-size: .9em;
+		margin: 2em 0;
+		margin-top: .8em;
+	}
+	
+	.postImgRight {
+
+		float: none;
+
+		display: block;
+		margin: 0 auto;
+	}
+
+
+}
+
+@media all and (min-width: 1100px) {
+
+	.portfolioLink {
+
+		font-size: 1em;
+
+	}
+
+	.portfolioLink:after {
+
+		content: " Portfolio";
+
+	}
+
+}
+

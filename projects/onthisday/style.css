@@ -1,0 +1,129 @@
+body {
+
+	margin: 0;
+	padding: 0;
+
+	background: #FDF2BB;
+
+	border-top: 6px solid #EDCA56;
+}
+
+#onthisday {
+
+	margin: 0;
+	padding: 0;
+
+	text-align: center;
+
+	color: #4C392B;
+
+	font-family: 'Slabo 27px';
+	font-weight: 100;
+	font-size: 2em;
+}
+
+#onthisday h2 {
+
+	display: inline-block;
+
+	margin: 6% 0;
+
+	border-bottom: 3px solid #EDCA56;
+}
+
+#onthisday p {
+
+	margin: auto;
+
+	width: 50%;
+}
+
+#generateFactBut {
+
+	display: block;
+
+	margin: auto;
+	margin-top: 6%;
+	padding: 15px 45px;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background: #fff;
+
+	color: #4C392B;
+	font-family: 'Slabo 27px';
+	font-size: 1.6em;
+
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+}
+
+#generateFactBut:hover {
+
+	background: #EDCA56;
+}
+
+#downloadSourceLink {
+
+	display: block;
+
+	text-align: center;
+
+	margin: auto;
+	margin-top: 2%;
+	padding: 0;
+
+	border: none;
+	background: none;
+
+	color: #4C392B;
+	font-family: 'Slabo 27px';
+	font-size: 1.2em;
+}
+
+#downloadSourceLink:hover {
+
+	text-decoration: none;
+}
+
+/*Media Queries*/
+
+@media all and (max-width: 700px) {
+
+	#onthisday h2 {
+
+		margin: 12% 0;
+
+		font-size: 1.1em;
+
+	}
+
+	#onthisday p {
+
+		margin-bottom: 12%;
+
+		font-size: .8em;
+
+		width: 70%;
+	}
+
+	#generateFactBut {
+
+		padding: 10px 35px;
+
+		font-size: 1.4em;
+	}
+
+	#downloadSourceLink {
+
+		font-size: 1.2em;
+
+	}
+
+}
+
+

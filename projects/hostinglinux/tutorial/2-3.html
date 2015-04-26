@@ -1,0 +1,133 @@
+<div class="page-container">
+
+    <article class="tutorial">
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-lock"></i> Securing SSH</h2>
+
+            <p>
+				SSH is the Secure SHell, but it's only as secure as it's configured to be. 
+				A recommendation is to disallow password authentication and disable root 
+				login. Public key authentication is significantly more secure, and ideally, 
+				a combination of public key authentication (with a password-protected key) and password 
+				authentication is recommended, making a breaking via SSH essentially impossible without 
+				the key of a user who has root permissions.
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+			
+			<h2><i class="fa fa-lock"></i> Securing MySQL</h2>
+
+            <p>
+				Do not enable access from anywhere but localhost. MySQL Workbench has this nifty little 
+				feature where you can connect to a server via SSH and then connect to a MySQL server, 
+				effectively connecting from localhost remotely.
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+            <h2><i class="fa fa-lock"></i> Securing PHP</h2>
+
+            <p>
+				Most of PHP is secure by default. A few modifications, like not printing errors, is generally 
+				a good idea. The harder it is to find a vector of attack, the better.
+			</p>
+
+		</section>
+		
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-lock"></i> Securing User Accounts</h2>
+			
+				<p class="keyword">Locking user accounts after login failures:</p>
+
+					<p>
+						Under Linux you can use the faillog command to display faillog records or to set login failure limits. faillog 
+						formats the contents of the failure log from /var/log/faillog database / log file. It also can be used for maintains 
+						failure counters and limits.
+					</p>
+			
+					<p>To see failed login attempts, enter:</p>
+			
+					<code class="exampleCode">faillog</code>
+			
+					<p>To unlock an account after login failures, run:</p>
+			
+					<code class="exampleCode">faillog -r -u userName</code>
+			
+					<p>Note you can use passwd command to lock and unlock accounts:</p>
+			
+					<code class="exampleCode">
+						# lock account<br />
+						passwd -l userName<br />
+						# unlocak account<br />
+						passwd -u userName
+					</code>
+			
+			
+				<p class="keyword">Verify no accounts have empty passwords:</p>
+			
+					<p>Type the following command</p>
+			
+					<code class="exampleCode"># awk -F: '($2 == "") {print}' /etc/shadow</code>
+			
+					<p>Lock all empty password accounts:</p>
+			
+					<code class="exampleCode"># passwd -l accountName</code>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-random"></i> Using SFTP</h2>
+
+            <p>
+				The use of SFTP over FTP is highly recommended when thinking about your basic server security.
+				Check out the <a class="sectionLink" href="2.2.html">FTP/SFTP</a> page for more informations regarding their use.
+			</p>
+
+		</section>
+		
+		<section class="tutorial-section">
+
+            <h2><i class="fa fa-ban"></i> Disable Unwanted Services</h2>
+
+            <p>
+				Disable all unnecessary services and daemons (services that runs in the background). 
+				You need to remove all unwanted services from the system start-up.
+			</p>
+			
+			<p>Type the following command to list all services which are started at boot time in run level # 3:</p>
+			
+			<code class="exampleCode"># chkconfig --list | grep '3:on'</code>
+			
+			<p>To disable service, enter:</p>
+			
+			<code class="exampleCode">
+				# service serviceName stop<br />
+				# chkconfig serviceName off
+			</code>
+			
+			
+
+		</section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+
+            <ul class="sourcesList">
+               <li><i class="fa fa-thumb-tack"></i><a href="http://jbsteiner.com/article/intro-basic-server-security">Basic Server Security</a></li>
+			   <li><i class="fa fa-thumb-tack"></i><a href="http://www.cyberciti.biz/tips/linux-security.html">Linux Server Security Tips</a></li>
+            </ul>
+
+        </section>
+        
+
+    </article>
+</div>

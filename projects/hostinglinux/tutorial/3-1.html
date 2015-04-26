@@ -1,0 +1,139 @@
+<div class="page-container">
+
+	<article class="tutorial">
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-bars"></i> Intro to Stacks</h2>
+
+			<p>
+				To make the explanation of Stacks more explicit, it is necessary to split up the acronym and analyze the importance of each.  The first letter in LAMP, MAMP, WAMP, represents the operating system being used to host the website.  In each case, the first letters refer to Linux, Mac, and Windows, respectively.  The following three letters,  "AMP," represents  a the combination of a web server (A- Apache), the database management system (M-MySQL), and the scripting language used to communicate with the server (P-PHP, Perl, Python, etc.).  The cost of each of these "stacks," as they are widely known as throughout the web community, is completely free, which makes this much more cost effective for those who want to put something important on the web.  The user simply has to purchase a domain name and link it to the IP Address of the server using one of the above stacks.
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-linux"></i> LAMP</h2>
+
+			<p>
+				As previously noted above, the LAMP stack represents a hosting layout in which the operating system being used to host is Linux.  Following the above layout, the next three letters represent: Apache, MySQL, and PHP, or simply any scripting language used to communicate with the server.  Because each Linux distro is widely open source, this stack using Linux is arguably over-tested (although this will never be true) when it comes to performance and security.  This makes the LAMP stack the most reliable stack of the three listed above and also one of the most consistently developed upon stacks of the three.  Each of the components from the stack can be found in the software repositories of most of the Linux distros, which again makes the installation of the stack components extremely easy, only requiring at the most 4 commands.  Given the high security testing of each of the Linux distros, the stack can be put together with many high-level security programs in order to minimize the possibilities of intrusion to the users website, which is yet another reason to adopt the LAMP stack.  For instructions on installing this stack on your specific Linux distro, see the following <a class="sectionLink" href="https://www.digitalocean.com/community/community_tags/lamp-stack" target="_blank">link</a> and look for your distribution version!
+			</p>
+
+			<br />
+			<h2><i class="fa fa-download"></i> Installation on Ubuntu</h2>
+
+			<p>
+				To instal <span class="keyword">Apache</span>, open terminal and type in these commands:
+			</p>
+
+			<code class="exampleCode">
+				sudo apt-get update<br />
+				sudo apt-get install apache2
+			</code>
+
+			<p>
+				It's as simple as that!  If you're running Apache on your physical machine, navigate to the localhost address.  If you installed Apache on a VPS or server not
+				pyhsically accessible to you then navigate to that servers IP Address using the following command:
+			</p>
+
+			<code class="exampleCode">
+				ifconfig eth0 | grep inet | awk '{ print $2 }'
+			</code>
+
+			<p>
+				To install <span class="keyword">MySQL</span>, open the terminal and type in these commands:
+			</p>
+
+			<code class="exampleCode">
+				sudo apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
+			</code>
+
+			<p>
+				Once it is installed, activate it with this command:
+			</p>
+
+			<code class="exampleCode">
+				sudo mysql_install_db
+			</code>
+
+			<p>
+				Now run the MySQL set up script:
+			</p>
+
+			<code class="exampleCode">
+				sudo /usr/bin/mysql_secure_installation
+			</code>
+
+			<p>
+				Next you will be prompted for your root password, type it in to continue the installation.
+			</p>
+
+			<p>
+				You will then be prompted with a bunch of yes/no questions.  It is simplest to say yes to all of them.
+				After finishing the prompts, you're done installing MySQL; on to PHP!
+			</p>
+
+			<p>
+				To install <span class="keyword">PHP</span>, open the terminal and type in this command:
+			</p>
+
+			<code class="exampleCode">
+				sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+			</code>
+
+			<p>
+				By saying yes to the following two prompts, PHP will complete the installation itself, and you're done!
+			</p>
+
+			<p>
+				To ensure that you're installations and changes have taken effect, restart apache with:
+			</p>
+
+			<code class="exampleCode">
+				sudo service apache2 restart
+			</code>
+
+			<p>
+				You're done!  Reload your window and begin working with the assets you've installed!
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-apple"></i> MAMP</h2>
+
+			<p>
+				As previously noted above, the MAMP stack represents a hosting layout in which the operating system being used to host is Mac OS X.  Following the above layout, the next three letters represent: Apache, MySQL, and PHP, or simply any scripting language used to communicate with the server.  The achievement of this stack however, can be accomplished in two ways.  The first is, and the likely easier of the two, is through the use of an application nicely named, MAMP, which can be found 
+				<a class="sectionLink" href="http://www.mamp.info/en/index.html" target="_blank">here</a>.  This application combines the configuration of each portion of the stack in the application itself, which makes things much less complicated for new users, and allows for these same users to put their website on the web much faster, with much less focus on the underlying configurations which would most likely be more confusing than helpful.  The second solution is a much more manual approach, which is more work through OS X's terminal.  This requires the user to manually install the MySQL and PHP (scripting language portion) of the stack through the command line.  The user is not required to install Apache manually as it is already installed with each release of OS X.  Because of the higher level of difficulty, for many users who want to host their website using OS X, the MAMP application is the way to go as its "unified GUI integration" makes configuration so simple its almost beautiful.  This unified GUI aids the user when he/she needs to restart, or turn off/on any of portions of the stack.  Without the application, the user would have to navigate in multiple windows to turn off and reconfigure each of the services of the stack.
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-windows"></i> WAMP</h2>
+
+			<p>
+				As previously noted above, the WAMP stack represents a hosting layout in which the operating system being used to host is Windows.  Following the above layout, the next three letters represent: Apache, MySQL, and PHP, or simply any scripting language used to communicate with the server.  The situation for the WAMP stack is largely the same as that of the MAMP stack, however it requires a bit more work when it comes to the manual installation portion.  If the user is so inclined to choose the longer route to setting up their web server, and they have chosen to do so without the use of an external program which unifies all of the stack components in a single program, they can do so, but not without a significant amount of work.  The Windows user is required to do manually install Apache, MySQL, and PHP (chosen scripting language) from each of their external sources (see bottom for useful references).  Upon downloading each of these, the user must manually configure each element of the stack on its own.  A great existing tutorial for manually setting up the WAMP stack can be found <a class="sectionLink" href="http://www.wikihow.com/Install-WAMP#Manual_Installation" target="_blank">here</a>.  The manual approach seems to be one that is largely deprecated and requires much more work than is ultimately necessary and generates more headaches than the widely accepted approach using the WAMP program.  WAMP, which can be found <a class="sectionLink" href="http://www.wampserver.com/en/" target="_blank">here</a>, is the solution to these headaches.  WAMP uses the same methodology as MAMP, the Mac OS X application does.  It combines each of the stack components in a unified GUI that can be easily accessed via the system tray in the Windows operating system.  From here the user has the ability to edit all configurations of each of the stack components.  To successfully install and configure this program, a great tutorial to follow can be found <a class="sectionLink" href="http://www.slideshare.net/triniwiz/wamp-20949805" target="_blank">here</a>, which supplies a nice set of slides for the user to follow along with step by step.  The above walkthrough also details the configuration of phpmyadmin, a client used to make work with databases much easier, and a lot more visual for those users who are not frequent "cmd" users.
+			</p>
+
+		</section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+
+            <ul class="sourcesList">
+               <li><i class="fa fa-thumb-tack"></i><a href="https://www.digitalocean.com/community/articles/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu" target="_blank">
+               Installing LAMP Stack on Ubuntu</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a href="https://help.ubuntu.com/10.04/serverguide/httpd.html" target="_blank">
+               Apache Configuration</a></li>
+            </ul>
+
+        </section>
+
+	</article>
+
+</div>

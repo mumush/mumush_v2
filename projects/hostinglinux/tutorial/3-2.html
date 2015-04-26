@@ -1,0 +1,58 @@
+<div class="page-container">
+
+	<article class="tutorial">
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-hdd-o"></i> Intro to Database</h2>
+
+			<p>
+				If you have not already read the above content concerning basic stacks to configure a web server, you might be inclined to scroll up and do so now before proceeding through this section about the use of databases.
+			</p>
+
+			<p>
+				In its simplest form, a database is a unified collection of data.  In the web, databases are used to store information that can then be queried upon and returned to the website, and thus displayed on web pages, which makes for much more dynamic websites, that more often than not require a great deal of information to be stored, and displayed.  Databases are separated into tables, which collect data that is relevant to only that table alone.  For example, if a user was interested in collecting basic information about a person (first name, last name, address, phone number, zipcode, etc.), the user would store this data in a table called "user_info" for example.  It then becomes extremely easy for the web developer to use a scripting language such as PHP (the final letter in the stack acronym), to query the database for each entry in this table, and return it to be displayed on the web page.  In the prior statement, the word entry refers to a single row that has been added to the table of data.  For example, if Joe Smith's information was entered into the table, a new row would be created, which contains his first name, last name, address, phone, zip code, etc.  Each of these values refer to a single column in the table, which were described above.  This association between the row data and the corresponding column name allows for queries such as getting all of the first names from the table, which makes sending relevant data to specific page quite easy with the knowledge of scripting languages such as PHP, PERL, or Python.
+			</p>
+
+			<p>
+				Both MySQL and SQLite are a relational database management systems, which means that they makes use of primary and foreign keys from multiple tables to accomplish the linkage between these tables, which allows for largely dynamic systems, and the prospect of cascade-esque updating results.  In order to delve a bit further into the meaning of relational databases, we must analyze the use, and importance of keys, as noted above.
+			</p>
+
+			<p>
+				Upon the creation of a new entry, or row, in a table, a "primary key" is incremented (normally by default).  This primary key, is a unique identifier for this specific row in the table of data.  So if the user was looking for the 5th entry in the table, they would query the table where the primary key, which normally has a column named a derivation of "tablename_id," where tablename is the name of the larger table the row is contained in, is equal to 5.  This would return to the user the complete row in the table where the primary key is equal to 5, or the fifth row of data.  Now this is all well and good, but things get quite interesting when foreign keys are introduced into the picture.
+			</p>
+
+			<p>
+				Foreign keys put the word "relational" into relational database management system.  Foreign keys allow for a user to have one table contain a value which references the row of another table.  Put more explicitly, we can further explore a example.  We will continue with the use of the above defined "user_info" table.  Let's say we have another table which is used to describe a person's favorite things (named: favorite_things), with columns named (favorites_id, color, ice cream, sport, operating system).  We can obviously populate the table with new rows for as many users as we want to, but how can we allow for a link to be made between a user we defined in the user_info table, and their entry in the favorite_things table.  Foreign keys to the rescue!  Remember how primary keys were used above to uniquely identify a specific row in the user_info table?  Well we can now get the primary key's value from the users specific row they entered (let's say it's value is 5 to go along with the above example), and place a reference to this value in the favorite_things table by using the following method.  We first need a column in the favorite_things table to hold all of the primary keys we are referencing in the user_info table.  Let’s call the new column "userInfo_For."  The "For" is shorthand for the word "foreign," and is used here to make things clear.  Because we know that the value of the primary key of the user we want is equal to 5, we can populate the column named "userInfo_For" in that same users row in the favorite things table with a value of 5.  We have now achieved a very basic, although not exactly functional, relationship between two different tables.  The importance of this lies in the fact that now whenever we access this row in the favorite_things table, and we select the "userInfo_For" columns value, we get a reference to the entire row for this users user information, which is extremely useful when implementing larger systems which require relationships between data, in order to maintain integrity.
+			</p>
+
+			<p>
+				To read more about relational databases, scroll down to the links useful references at the bottom of the page, which have links to detailed tutorials and information on syntax of different management systems.
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2>MySQL</h2>
+
+			<p>
+				MySQL is one of the most popular, and widely used relational database systems used today and is quite common for web developers to use.  See the following link for information regarding syntax, and basic installation instructions if you are interested in running a simple MySQL command line client for practice: 
+				<a class="sectionLink" href="http://dev.mysql.com/downloads/mysql/" target="_blank">MySQl</a>.  <span class="keyword">For installation instructions</span>, visit our <a href="?section=3-1" class="sectionLink">LAMP</a> installation tutorial that includes the manual MySQL installation!
+			</p>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2>SQLite</h2>
+
+			<p>
+				SQLite is also a very popular, and light-weight relational database system.  It is in fact the most deployed SQL database engine in the world because of how efficient and light-weight the system is.  See the following link if you are interested in implementing a simple command line client for practice: <a class="sectionLink" href="http://www.sqlite.org/download.html" target="_blank">SQLite</a>.  Also please see the bottom of the page for useful tutorials regarding SQLite.
+			</p>
+
+		</section>
+
+	</article>
+
+</div>

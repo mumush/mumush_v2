@@ -1,0 +1,388 @@
+body {
+
+	margin: 0;
+	padding: 0;
+
+	font-family: "Open Sans";
+
+	background: #fff;
+	color: #fff;
+
+}
+
+header {
+
+	margin: 0;
+	padding: 0;
+}
+
+#bioSection {
+
+	margin: 0;
+	padding: 3em 3em;
+
+	background: #8FAEDD;
+}
+
+#bioSection h1 {
+
+	margin-bottom: .5em;
+	color: #fff;
+	font-size: 5em;
+}
+
+#bioSection h2 {
+
+	margin: 0;
+	margin-bottom: 1em;
+
+	font-size: 1.9em;
+	font-weight: 700;
+
+	line-height: 1.6em;
+
+	max-width: 900px;
+
+	color: #384346;
+
+}
+
+#bioSection h3 {
+
+	margin: 0;
+	padding: 0;
+
+	font-size: 1.3em;
+	font-weight: 400;
+
+	line-height: 1.7em;
+
+	max-width: 650px;
+
+	color: #384346;
+
+}
+
+.bioBlogLink {
+
+	text-decoration: none;
+	color: #424F53;
+	font-weight: 700;
+
+}
+
+.bioBlogLink:hover {
+
+	color: #384346;
+}
+
+nav {
+
+	margin-top: 6em;
+	margin-bottom: 1em;
+
+}
+
+nav a {
+
+	display: inline-block;
+
+	margin: 0;
+	margin-bottom: 1em;
+	margin-right: 1.5em;
+	padding: .5em 1em;
+
+	color: #424F53;
+	text-decoration: none;
+
+	font-weight: 400;
+
+	border: 2px solid #424F53;
+	border-radius: 3px;
+
+}
+
+nav a:hover {
+
+	color: #384346;
+	border-color: #384346;
+
+}
+
+.projectSection {
+
+	margin: 0 auto;
+	padding: 6em 3em;
+}
+
+.projectDesc {
+
+	max-width: 1100px;
+
+	font-size: 3em;
+	font-weight: 700;
+
+	margin-bottom: 2.5em;
+
+}
+
+.projectLink {
+
+	font-weight: 400;
+
+	color: #fff;
+	text-decoration: none;
+
+	border: 2px solid #fff;
+	border-radius: 4px;
+
+	padding: 1em 1.5em;
+
+}
+
+footer {
+
+	background: #8FAEDD;
+
+	padding: 4em 2em;
+
+}
+
+footer h1 {
+
+	font-size: 4em;
+	text-align: center;
+}
+
+footer h1 a {
+
+	padding-bottom: 10px;
+
+	text-decoration: none;
+
+	color: #fff;
+
+	border-bottom: 3px solid #fff;
+
+}
+
+footer h1 a:hover {
+
+	border-bottom-style: dashed;
+
+}
+
+#allergeez {
+	background: #5494F6;
+}
+#immersivereader {
+	background: #FF8319;
+}
+#whether {
+	background: #D33734;
+}
+#readtablater {
+	background: #7B52AB;
+}
+#ritlocalhost {
+	background: #1695A3;
+}
+#stylable {
+	background: #00A86D;
+}
+#onthisday {
+	background: #FFD34E;
+}
+#poster {
+	background: #04BF9D;
+}
+#seokin {
+	background: #F9722E;
+}
+#bikinibottom {
+	background: #00B2B9;
+}
+#hostingwithlinux {
+	background: #2C3E50;
+}
+
+
+@media all and (max-width: 700px) {
+
+	#bioSection h1 {
+
+		margin-bottom: .5em;
+		font-size: 3em;
+	}
+
+	#bioSection h2 {
+
+		margin: 0;
+		margin-bottom: 1.5em;
+
+		font-size: 1.2em;
+
+		line-height: 1.6em;
+
+		max-width: 500px;
+
+	}
+
+	#bioSection h3 {
+
+		font-size: 1em;
+
+		line-height: 1.6em;
+
+		max-width: 450px;
+
+	}
+
+	nav {
+
+		margin-top: 4em;
+		margin-bottom: 1em;
+	}
+
+	nav a {
+
+		font-size: .9em;
+
+		padding: .5em 1em;
+
+	}
+
+	.projectSection {
+
+		margin: 0 auto;
+		padding: 6em 3em;
+	}
+
+	.projectDesc {
+
+		font-size: 2em;
+
+		margin-bottom: 3.5em;
+
+	}
+
+	.projectLink {
+
+		font-size: .9em;
+
+		padding: .8em 1.3em;
+
+	}
+
+	footer {
+
+		padding: 4em 2em;
+	}
+
+	footer h1 {
+
+		font-size: 2.5em;
+	}
+
+	footer h1 a {
+
+		padding-bottom: 8px;
+	}
+
+}
+
+@media all and (min-width: 1300px) {
+
+	#bioSection {
+
+		padding-left: 8em;
+		padding-right: 8em;
+		padding-top: 2em;
+
+	}
+
+	#bioSection h1 {
+
+		font-size: 5.7em;
+	}
+
+	#bioSection h2 {
+
+		margin-bottom: 1em;
+
+		font-size: 2.2em;
+
+		max-width: 1200px;
+
+	}
+
+	#bioSection h3 {
+
+		font-size: 1.5em;
+		font-weight: 400;
+
+		line-height: 1.7em;
+
+		max-width: 950px;
+
+	}
+
+	nav {
+
+		margin-top: 6em;
+		margin-bottom: 3em;
+
+	}
+
+	nav a {
+
+		margin-right: 1.5em;
+		padding: .6em 1.1em;
+
+		font-size: 1.1em;
+
+	}
+
+	.projectSection {
+
+		padding: 8em;
+
+	}
+
+	.projectDesc {
+
+		max-width: 1700px;
+
+		font-size: 3.5em;
+
+		margin-bottom: 2.5em;
+
+	}
+
+	.projectLink {
+
+		font-size: 1.1em;
+
+		padding: 1em 1.5em;
+
+	}
+
+	footer {
+
+		padding: 6em 2em;
+
+	}
+
+	footer h1 {
+
+		font-size: 4.5em;
+	}
+
+	footer h1 a {
+
+		border-bottom-width: 4px;
+	}
+
+}
+
+}

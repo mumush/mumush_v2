@@ -1,0 +1,135 @@
+.speechbubble {
+
+	display: none;
+
+}
+
+.arrow {
+
+	bottom: -12%;
+
+}
+
+section {
+
+	height: 75%;
+
+}
+
+section h1 {
+
+	font-size: 350%;
+
+}
+
+#about .aboutHeader {
+
+	font-size: 250%;
+
+}
+
+section p {
+
+	font-size: .8em;
+
+}
+
+section .showQuoteFormRight {
+
+	margin-left: 59%;
+	padding: 1% 4%;
+
+	font-size: 1.4em;
+
+}
+
+.quoteField {
+	
+	height: 50px;
+	width: 80%;
+
+}
+
+#bikinibottom {
+
+	height: 75%;
+
+}
+
+
+#bikinibottom h1 {
+
+	font-size: 250%;
+
+}
+
+#bikinibottom img {
+
+	padding-bottom: 3%;
+
+}
+
+#bikinibottom p {
+
+	font-size: .85em;
+
+}
+
+/*HIDDEN NAVIGATION ICON SPECIFIC SIZE STYLES*/
+
+#hiddenNav li #navSponge img, #hiddenNav li #navPatrick img {
+
+	padding-left: .5%;
+	width: 28%;
+
+}
+
+#hiddenNav li #navSquid img {
+
+	padding-left: 2%;
+	width: 20%;
+
+}
+
+#hiddenNav li #navSandy img, #hiddenNav li #navKrabs img, #hiddenNav li #navPearl img  {
+
+	padding-left: .2%;
+	width: 26%;
+
+}
+
+#hiddenNav li #navPlankton img {
+
+	width: 17%;
+	padding-left: 3%;
+	opacity: .7;
+
+}
+
+#hiddenNav li #navGary img {
+
+	width: 30%;
+	padding-left: 0%;
+
+}
+
+#hiddenNav li #navPuff img {
+
+	width: 26%;
+	padding-left: 0%;
+
+}
+
+#hiddenNav li #navMermBarn img {
+
+	width: 30%;
+	padding-left: 0%;
+
+}
+
+#hiddenNav li {
+
+	padding-left: 6%;
+
+}
+

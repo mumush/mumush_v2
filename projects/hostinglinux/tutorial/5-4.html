@@ -1,0 +1,181 @@
+<div class="page-container">
+
+    <article class="tutorial">
+
+    	<section class="tutorial-section">
+
+    		<h2><i class="fa fa-ellipsis-v"></i> Intro to IPv6</h2>
+
+			<p>
+				Internet Protocol version 6 (IPv6) is the latest revision of the Internet Protocol (IP), the 
+				communications protocol that provides an identification and location system for computers on 
+				networks and routes traffic across the Internet. With the increase of Internet capable devices, 
+				the IPv4 addresses are running out, IPv6 is intended to replace IPv4, which still carries the 
+				vast majority of Internet traffic as of 2013.
+			</p>
+
+		</section>
+		
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-plus-square"></i> Benefits of IPv6</h2>
+
+			<p>
+				The benefits of the Internet are drawn directly from the platform of interoperability created 
+				by use of the Internet Protocol, leading to a large "network effect". That is, the benefits to 
+				a company from the Internet arise not just by the extent to which the company itself uses the 
+				Internet, but far more from the extent to which others - suppliers, customers and individuals - also 
+				use the Internet. Because IPv6 will greatly increase the size and range of devices connected to the 
+				Internet, the benefit of the network effect will increase accordingly. Large corporations like Google, 
+				Cisco have announced that they are going to applying IPv6 to their products and services.
+			</p>
+
+		</section>
+		
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-check-square"></i> Enable IPv6 on Apache</h2>
+
+			<p>
+				Open httpd.conf, enter:
+			</p>
+
+			<code class="exampleCode"># vi httpd.conf</code>
+
+			<p>
+				To make the server accept connections on 74.86.48.99 and port 80, use:
+			</p>
+
+			<code class="exampleCode">Listen 74.86.48.99:80</code>
+
+			<p>
+				IPv6 addresses must be surrounded in square brackets and port 80, use:
+			</p>
+
+			<code class="exampleCode">Listen [2607:f0d0:1002:11::4]:80</code>
+
+			<p>
+				Save and close the file. Restart/Reload Apache: <br />
+			</p>
+
+			<code class="exampleCode"># service httpd restart</code>
+
+		</section>
+
+		<section class="tutorial-section">
+
+			<h2><i class="fa fa-cog"></i> Configure IP table to Allow Access to the Web Server via IPv6</h2>
+
+			<p>
+				The default <span style="color: #D41547;">Ip6tables</span> configuration does not allow inbound access to the HTTP 
+				(80) and HTTPS (443) ports used by the web server. This modification allows that
+				access, while keeping other ports on the server in their default protected state. 
+				Edit <span style="color: #D41547;">/etc/sysconfig/ip6tables</span> (IPv6 firewall configuration file under CentOS / RHEL / Fedora).
+			</p>
+
+			<code class="exampleCode"># vi /etc/sysconfig/ip6tables</code>
+
+			<p>
+				Add the following lines, ensuring that they appear before the final LOG and DROP lines for the RH-Firewall-1-INPUT chain:
+			</p>
+
+			<code class="exampleCode">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 80 -j ACCEPT</code>
+
+			<p>
+				Add the following if you have configured HTTPS port: <br />
+			</p>
+
+			<code class="exampleCode">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport 443 -j ACCEPT</code>
+
+			<p>
+				Save and close the file. Restart firewall: <br />
+			</p>
+
+			<code class="exampleCode"># service ip6tables restart</code>
+
+		</section>
+
+        <section class="tutorial-section">
+
+            <h2><i class="fa fa-group"></i> Sources</h2>
+
+            <ul class="sourcesList">
+               <li><i class="fa fa-thumb-tack"></i><a target="_blank" href="http://en.wikipedia.org/wiki/IPv6">IPv6</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a target="_blank" href="http://www.ipv6now.com.au/primers/IPv6Advantages.php">Advantages of IPv6</a></li>
+               <li><i class="fa fa-thumb-tack"></i><a target="_blank" href="http://www.cyberciti.biz/faq/ipv6-apache-configuration-tutorial/">Apache/IPv6 Configuration</a></li>
+            </ul>
+
+        </section>
+		
+		<!--Duel stack-->
+		<!--h3>Working with IPv4</h3>
+		<p>
+		  Update your httpd.conf files as follow for httpd virtual hosting: <br />		  
+		</p-->
+		
+		<!-- This is the Apache duel stack config
+		 #IPv4 configuration
+<VirtualHost 74.86.48.99>
+	ServerAdmin webmaster@cyberciti.com
+	DocumentRoot /home/httpd/cyberciti.biz/http
+	ServerName cyberciti.biz
+	ServerAlias www.cyberciti.biz
+	ErrorLog logs/cyberciti.biz-error_log
+	TransferLog logs/cyberciti.biz-access_log
+        ErrorLog "/home/httpd/cyberciti.biz/logs/error.log"
+        CustomLog "/home/httpd/cyberciti.biz/logs/access.log" common
+        ScriptAlias /cgi-bin/ "/home/httpd/cyberciti.biz/cgi-bin/"
+ 
+# For php5 fastcgi add +ExecCGI
+ 	<Directory "/home/httpd/cyberciti.biz/http">
+		Options -Indexes FollowSymLinks +ExecCGI
+		AllowOverride AuthConfig FileInfo
+		AddHandler php5-fastcgi .php
+		Action php5-fastcgi /cgi-bin/php.fcgi
+		Order allow,deny
+		Allow from all
+	</Directory>
+ 
+# Default cgi-bin perms
+	<Directory "/home/httpd/cyberciti.biz/cgi-bin">
+		AllowOverride None
+		Options None
+		Order allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>
+ 
+# Ipv6 config, note down log files
+<VirtualHost [2607:f0d0:1002:11::4]>
+	ServerAdmin webmaster@cyberciti.com
+	DocumentRoot /home/httpd/cyberciti.biz/http
+	ServerName cyberciti.biz
+	ServerAlias www.cyberciti.biz
+	ErrorLog logs/cyberciti.biz-error_log
+	TransferLog logs/cyberciti.biz-access_log
+        ErrorLog "/home/httpd/cyberciti.biz/logs/ipv6.error.log"
+        CustomLog "/home/httpd/cyberciti.biz/logs/ipv6.access.log" common
+        ScriptAlias /cgi-bin/ "/home/httpd/cyberciti.biz/cgi-bin/"
+ 
+# For php5 fastcgi add +ExecCGI
+ 	<Directory "/home/httpd/cyberciti.biz/http">
+		Options -Indexes FollowSymLinks +ExecCGI
+		AllowOverride AuthConfig FileInfo
+		AddHandler php5-fastcgi .php
+		Action php5-fastcgi /cgi-bin/php.fcgi
+		Order allow,deny
+		Allow from all
+	</Directory>
+ 
+# Default cgi-bin perms
+	<Directory "/home/httpd/cyberciti.biz/cgi-bin">
+		AllowOverride None
+		Options None
+		Order allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>
+		-->
+
+    </article>
+</div>

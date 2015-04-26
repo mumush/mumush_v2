@@ -1,0 +1,153 @@
+html, body {
+
+	margin: 0;
+	padding: 0;
+}
+
+body {
+
+	font-family: "Roboto";
+	color: #fff;
+	background: #5494F6;
+}
+
+#excitedSection {
+
+	float: left;
+
+	margin: 0;
+	margin-top: 200px;
+	margin-left: 25%;
+	padding: 0;
+
+}
+
+#excitedSection h1 {
+
+	margin: 0;
+	margin-bottom: 30px;
+	padding: 0;
+
+	font-weight: 100;
+	font-size: 5em;
+
+}
+
+.rollingIcon {
+
+	display: block;
+
+	margin: auto;
+	margin-bottom: 60px;
+	
+}
+
+.appleLogo {
+
+	width: 18px;
+}
+
+.downloadAppLink {
+
+	margin: auto;
+	text-align: center;
+
+	padding: 12px 25px;
+
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 100;
+
+	text-decoration: none;
+
+	border: 2px solid #fff;
+	border-radius: 2px;
+
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+
+}
+
+.downloadAppLink:hover {
+
+	background: #fff;
+	color: #5494F6;
+}
+
+.downloadAppLink:hover .appleLogo path {
+
+	fill: #5494F6;
+}
+
+#iphoneSection {
+
+	float: left;
+
+	margin-top: 50px;
+	margin-left: 10%;
+
+	width: 300px;
+	height: 631px;
+
+	background: url("../img/iphone.png") no-repeat center center;
+
+}
+
+#iphoneSection video {
+
+	display: block;
+	margin: auto;
+	padding-top: 92px;
+	padding-left: 2px;
+
+}
+
+
+/* Media Queries */
+
+@media all and (max-width: 1000px) {
+
+	#excitedSection {
+
+		float: none;
+
+		margin: 20px 0px;
+		padding: 0;
+
+		text-align: center;
+
+	}
+
+	#excitedSection h1 {
+
+		font-size: 4em;
+
+		margin-bottom: 40px;
+	}
+
+	.rollingIcon {
+
+		display: none;
+	}
+
+	.downloadAppLink {
+
+		padding: 10px 14px;
+
+		font-size: 1.1em;
+		font-weight: 100;
+	}
+
+	#iphoneSection {
+
+		float: none;
+
+		margin: 60px auto;
+		padding: 0;
+
+	}
+
+}
+

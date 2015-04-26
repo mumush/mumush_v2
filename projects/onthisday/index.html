@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <title>On This Day JS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+
+    <div id="onthisday"></div>
+
+    <button id="generateFactBut" onclick="onThisDay()">Get Another Fact</button>
+    <a href="onthisday.zip" id="downloadSourceLink">Download Source</a>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script charset="utf-8">
+
+    //************This day in history************
+
+    //based on the current date, a random fact is returned
+    //Uses Wikimedia api -> https://www.mediawiki.org/wiki/API
+    function onThisDay() {
+
+      var restfulURL = constructURL();
+
+      $.ajax({
+          type : "GET",
+          dataType : "jsonp",
+          url : restfulURL,
+          success: function(jsonResponse){
+
+            console.log("Object: " + jsonResponse);
+
+            //traverse response object to get to the large content string
+            var pageContent = findContent(jsonResponse);
+
+            //parse the large string of content and return array of events
+            var events = parseEvents(pageContent);
+
+            //given an array of events, return a random indexes fact
+            var factoid = randomFactoid(events);
+
+            //find the element with the id 'onThisDay' and add the fact to the element
+            showFactoid(factoid);
+
+          }
+      });
+
+    }
+
+    function constructURL() {
+
+      var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
+      //get current date
+      var today = new Date();
+      var day = today.getDate();
+      var month = today.getMonth(); //month will only be a number Jan=0 and Dec=11
+      month = monthNames[month]; //get the name
+
+      //create the date in format for restful url
+      var urlDateString = month + "_" + day;
+
+      //concatenate portions of url
+      var endPoint = "https://en.wikipedia.org/w/api.php?";
+      var options = "format=json&action=query&titles=";
+      options += urlDateString + "&prop=extracts";
+
+      var restfulURL = endPoint + options;
+
+      console.log("URL: " + restfulURL);
+
+      return restfulURL;
+
+    }
+
+    function findContent(jsonObj) {
+
+      var pagesObj = jsonObj.query.pages;
+
+      var pageContent;
+
+      for (var property in pagesObj) {
+        if (pagesObj.hasOwnProperty(property)) {
+            console.log(property);
+            pageContent = pagesObj[property].extract
+        }
+      }
+
+      //console.log("Content: " + pageContent);
+
+      return pageContent;
+
+    }
+
+
+    //right now, interest will solely be in "Events"
+    //return array of events
+    function parseEvents(pageContent) {
+
+      console.log("----------------------------");
+
+      //find the first h2 tag and get the next element -> ul of events
+      var eventsList = $(pageContent).closest("h2:contains('Events')").next().children();
+
+      var eventsFacts = [];
+
+      eventsList.each(function() {
+
+        console.log("Fact: " + $(this).text());
+
+        eventsFacts.push( $(this).text() );
+
+      });
+
+      return eventsFacts;
+
+    }
+
+
+    function randomFactoid(eventsArray) {
+
+      //no need to get the array length - 1 in this case bc that + 1 value isn't included
+      var maxVal = eventsArray.length;
+      var minVal = 0;
+
+      //returns random number between minVal (inclusive) and maxVal (exclusive)
+      var randomNum = Math.floor(Math.random() * (maxVal - minVal)) + minVal;
+
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~");
+
+      console.log("Events Array Length: " + maxVal);
+
+      console.log("Random Number: " + randomNum);
+
+      console.log("Random Fact: " + eventsArray[randomNum]);
+
+      return eventsArray[randomNum];
+
+    }
+
+    function showFactoid(factoid) {
+
+      $("#onthisday").empty();
+
+      $("#onthisday").append("<h2>THIS DAY IN HISTORY</h2>");
+      $("#onthisday").append("<p>" + factoid + "</p>");
+
+    }
+
+    //call method to initially load fact
+    onThisDay();
+
+
+    </script>
+
+
+  </body>
+
+</html>

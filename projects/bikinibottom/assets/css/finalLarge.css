@@ -1,0 +1,144 @@
+section {
+
+	height: 100%;
+
+}
+
+.arrow {
+	content: '';
+	border-color: #EDEDED transparent transparent transparent;
+	border-style: solid;
+	border-width: 50px;
+	height:0;
+	width:0;
+	position:absolute;
+	bottom: -11%;
+	left: 45%;
+	z-index: 10;
+
+	display: none;
+
+}
+
+
+#bikinibottom {
+
+	height: 100%;
+
+}
+
+#bikinibottom img {
+
+	margin-bottom: 4%;
+
+}
+
+#bikinibottom p {
+
+	font-size: .95em;
+
+}
+
+.speechbubble {
+
+	position: relative;
+	width: 205px;
+	height: 90px;
+
+	bottom: 19%;
+	left: 62%;
+
+	font-size: .7em;
+
+	padding-top: 1%;
+	padding-right: 2%;
+}
+
+.speechbubble:after {
+
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 15px 15px 15px 0;
+	border-color: transparent #34C9CE;
+	display: block;
+	width: 0;
+	z-index: 1;
+	left: -15px;
+	top: 40px;
+}
+
+#hiddenNav {
+
+	margin-left: 1%;
+
+}
+
+#hiddenNav li #navSponge img, #hiddenNav li #navPatrick img {
+
+	padding-left: .5%;
+	width: 50%;
+
+}
+
+#hiddenNav li #navSquid img {
+
+	padding-left: 8%;
+	width: 30%;
+
+}
+
+#hiddenNav li #navSandy img, #hiddenNav li #navKrabs img, #hiddenNav li #navPearl img  {
+
+	width: 55%;
+
+}
+
+#hiddenNav li #navPlankton img {
+
+	width: 35%;
+	padding-left: 8%;
+	opacity: .6;
+
+}
+
+#hiddenNav li #navGary img {
+
+	width: 60%;
+
+}
+
+#hiddenNav li #navPuff img {
+
+	width: 55%;
+	padding-left: 1%;
+
+}
+
+#hiddenNav li #navMermBarn img {
+
+	width: 70%;
+	padding-left: 0%;
+
+}
+
+
+#uparrow {
+
+	display: inline;
+
+	cursor: pointer;
+	position: fixed;
+	bottom: 5%;
+	right: 0%;
+
+	width: 5%;
+
+	opacity: .6;
+
+	z-index: 100;
+
+}
+
+
+

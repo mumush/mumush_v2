@@ -1,0 +1,46 @@
+#nav-container {
+
+	width: 280px;
+
+}
+
+#navHeader {
+
+	padding-top: 0.5%;
+
+}
+
+#navHeader > a {
+
+	font-size: 1.9em;
+
+}
+
+#innerNav {
+
+	margin-top: 0%;
+
+}
+
+.navSection {
+
+	font-size: 1.4em;
+
+	padding-bottom: 3%;
+}
+
+.navHidden ul li a {
+
+	font-size: 1.1em;
+
+}
+
+.collapsed {
+	height: 50px;
+}
+
+.expanded {
+
+	height: 160px;
+
+}
