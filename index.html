@@ -103,6 +103,25 @@
 			<h1><a href="mailto:rhoff37@gmail.com">Contact me</a></h1>
 		</footer>
 
+		<script>
+
+			if ("backgroundAttachment" in document.body.style) {
+
+				console.log("Background Attachment Is Supported");
+				document.body.className = "bodyFixedImage";
+
+
+			}
+			else {
+
+				console.log("Background Attachment Not Supported");
+				document.body.className = "bodyGradientFallback";
+
+			}
+
+		</script>
+
+
 	</body>
 
 </html>

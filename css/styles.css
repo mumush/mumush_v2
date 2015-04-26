@@ -8,8 +8,23 @@ body {
 	background: #fff;
 	color: #fff;
 
+}
+
+.bodyFixedImage {
+
 	background: url("../img/mountains.jpg") center;
 	background-attachment: fixed;
+
+}
+
+.bodyGradientFallback {
+
+	background-color: #768EFF; /* fallback color if gradients are not supported */
+
+	background-image: -webkit-linear-gradient(top, #768EFF, #FFDD99);
+	background-image: -moz-linear-gradient(top, #768EFF, #FFDD99);
+	background-image: -o-linear-gradient(top, #768EFF, #FFDD99);
+	background-image: linear-gradient(to bottom, #768EFF, #FFDD99);
 
 }
 
@@ -204,40 +219,6 @@ footer h1 a:hover {
 	border-bottom-style: dashed;
 }
 
-/*#allergeez {
-	background: #5494F6;
-}
-#immersivereader {
-	background: #FF8319;
-}
-#whether {
-	background: #D33734;
-}
-#readtablater {
-	background: #7B52AB;
-}
-#ritlocalhost {
-	background: #1695A3;
-}
-#stylable {
-	background: #00A86D;
-}
-#onthisday {
-	background: #FFD34E;
-}
-#poster {
-	background: #04BF9D;
-}
-#seokin {
-	background: #F9722E;
-}
-#bikinibottom {
-	background: #00B2B9;
-}
-#hostingwithlinux {
-	background: #2C3E50;
-}*/
-
 /* Media Queries */
 
 @media all and (min-width: 500px) {
@@ -349,13 +330,12 @@ footer h1 a:hover {
 
    .socialLinks {
 
-   	margin-top: 7em;
+   	margin-top: 5em;
       margin-bottom: 3em;
    }
 
    .socialLinks a {
 
-   	margin-bottom: 0em;
    	margin-right: 2em;
 
 		padding: .4em 1.2em;
