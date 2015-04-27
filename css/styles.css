@@ -199,7 +199,7 @@ footer {
 
 footer h1 {
 
-	font-size: 2em;
+	font-size: 1.5em;
 	text-align: center;
 }
 
@@ -291,11 +291,19 @@ footer h1 a:hover {
    	margin-top: 14em;
    }
 
+	footer h1 {
+
+   	font-size: 2em;
+   }
+
 }
 
 @media all and (min-width: 700px) {
 
 	header {
+
+		margin-top: 7em;
+		margin-bottom: 18em;
 
 		padding: 0 4em;
 
@@ -315,7 +323,7 @@ footer h1 a:hover {
 
    	line-height: 1.6em;
 
-		max-width: 850px;
+		max-width: 900px;
 
    }
 
@@ -366,12 +374,12 @@ footer h1 a:hover {
 
    footer {
 
-   	margin-top: 16em;
+   	margin-top: 20em;
    }
 
    footer h1 {
 
-   	font-size: 4em;
+   	font-size: 2em;
    }
 
 
@@ -380,6 +388,8 @@ footer h1 a:hover {
 @media all and (min-width: 1300px) {
 
 	header {
+
+		margin-top: 8em;
 
 		max-width: 1100px;
 	}
@@ -441,9 +451,5 @@ footer h1 a:hover {
    }
 
 
-	footer h1 a {
-
-		border-bottom-width: 4px;
-	}
 
 }
