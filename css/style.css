@@ -5,7 +5,6 @@ body {
 
 	font-family: "Open Sans";
 
-	background: #fff;
 	color: #fff;
 
 }
@@ -119,26 +118,24 @@ header {
 
 	text-decoration: none;
 
-	color: #33332D;
-	text-decoration: none;
+	color: rgba(0, 0, 0, .5);
 
 	font-weight: 400;
 	font-size: .9em;
 
-	border-bottom: 1px solid #33332D;
+	border-bottom: 1px solid rgba(0, 0, 0, .3);
 
-	opacity: .8;
-
-	-webkit-transition: opacity .1s ease-in-out;
-	-moz-transition: opacity .1s ease-in-out;
-	-o-transition: opacity .1s ease-in-out;
-	-ms-transition: opacity .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
 
 }
 
 .socialLinks a:hover {
 
-	opacity: 1;
+	color: rgba(0, 0, 0, .6);
+	border-bottom: 1px solid rgba(0, 0, 0, .6);
 }
 
 .projectSection {
@@ -160,22 +157,17 @@ header {
 
 .projectLink {
 
-   font-size: .8em;
-	font-weight: 400;
-
-	color: #fff;
-	text-decoration: none;
-
-	border: 2px solid #fff;
-	border-radius: 4px;
-
 	padding: .8em 1.2em;
 
-	opacity: .8;
+	background: rgba(255, 255, 255, .6);
+	border-radius: 4px;
 
-	color: rgba(0, 0, 0, .6);
-	background: rgba(255, 255, 255, .7);
-	border: 2px solid rgba(255, 255, 255, .1);
+	text-decoration: none;
+
+	font-size: .8em;
+	font-weight: 400;
+
+	color: rgba(0, 0, 0, .5);
 
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
@@ -186,8 +178,8 @@ header {
 
 .projectLink:hover {
 
-	background: rgba(255, 255, 255, 1);
-	color: rgba(0, 0, 0, .8);
+	background: rgba(255, 255, 255, .9);
+	color: rgba(0, 0, 0, .7);
 
 }
 
@@ -219,11 +211,16 @@ footer h1 a:hover {
 	border-bottom-style: dashed;
 }
 
+
+
+
 /* Media Queries */
 
 @media all and (min-width: 500px) {
 
 	header {
+		
+		margin-top: 5em;
 
 		max-width: 500px;
 	}
@@ -259,14 +256,23 @@ footer h1 a:hover {
 
 		padding: .5em 1em;
 
-		color: rgba(0, 0, 0, .6);
+		color: rgba(0, 0, 0, .5);
 
-		background: rgba(255, 255, 255, .8);
+		background: rgba(255, 255, 255, .6);
 
-		border: 2px solid rgba(255, 255, 255, .1);
+		border-bottom: none;
 		border-radius: 3px;
 
    }
+
+	.socialLinks a:hover {
+
+		border-bottom: none;
+
+		background: rgba(255, 255, 255, .9);
+		color: rgba(0, 0, 0, .7);
+
+	}
 
 	.projectSection {
 
@@ -346,7 +352,7 @@ footer h1 a:hover {
 
    	margin-right: 2em;
 
-		padding: .4em 1.2em;
+		padding: .5em 1.3em;
 
 		font-size: 1em;
 
@@ -417,7 +423,7 @@ footer h1 a:hover {
 
 		margin-right: 3em;
 
-		padding: .5em 1.4em;
+		padding: .6em 1.5em;
 
 		font-size: 1em;
    }

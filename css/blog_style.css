@@ -7,45 +7,14 @@ body {
 
 }
 
-q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-.portfolioLink {
-
-	font-family: "Open Sans";
-
-	position: fixed;
-	top: 2em;
-	left: 2em;
-
-	color: #B0B8C7;
-	font-size: 1em;
-
-	text-decoration: none;
-
-	vertical-align: middle;
-
-}
-
-.portfolioLink:hover {
-
-	color: #60697B;
-
-}
-
-#blogPosts {
-
-	margin: 4em 4em;
-
-}
-
 .postSection {
 
-	margin: 0 auto;
-	margin-bottom: 12em;
+	margin: 2em auto;
+	margin-bottom: 8em;
 
-	max-width: 750px;
+	padding: 0em 2.5em;
+
+	max-width: 700px;
 
 }
 
@@ -53,15 +22,13 @@ q {
 
 	font-family: "Open Sans";
 
-	font-size: 3.5em;
+	font-size: 2em;
 
 	color: #565E6E;
 
-	border-bottom: 10px solid #60697B;
+	border-bottom: 3px solid #60697B;
 
 	text-align: center;
-
-	padding-bottom: .5em;
 
 }
 
@@ -72,8 +39,9 @@ q {
 	display: block;
 
 	margin-top: 1em;
+	margin-bottom: 1em;
 
-	font-size: .35em;
+	font-size: .5em;
 
 	color: #60697B;
 
@@ -84,7 +52,7 @@ q {
 	font-family: "Merriweather";
 
 	font-weight: 300;
-	font-size: 1.3em;
+	font-size: 1.1em;
 
 	line-height: 1.8em;
 
@@ -113,8 +81,9 @@ q {
 
 .postImportantText {
 
-	font-weight: 400;
+	font-family: "Merriweather";
 
+	font-weight: 400;
 }
 
 .postCodeExample {
@@ -162,16 +131,6 @@ q {
 
 }
 
-.postImgRight {
-
-	margin: 0;
-	margin-left: 2em;
-	margin-bottom: 1em;
-
-	float: right;
-
-}
-
 .postImgLarge {
 
 	width: 80%;
@@ -186,95 +145,86 @@ q {
 	text-align: center;
 }
 
+
 /* Media Queries */
 
-@media all and (max-width: 1100px) {
-
-	.portfolioLink {
-
-		top: .5em;
-		left: 1em;
-
-		font-size: 1.4em;
-	}
-
-}
-
-@media all and (max-width: 750px) {
-
-	.portfolioLink {
-
-		font-size: 1.3em;
-	}
+@media all and (min-width: 700px) {
 
 	.postSection {
 
-		margin-bottom: 8em;
+		margin-top: 4em;
 	}
 
 	.postTitle {
 
-		font-size: 1.8em;
+		font-size: 3em;
 
-		border-bottom-width: 5px;
-
-		padding-bottom: 1em;
+		border-bottom: 5px solid #60697B;
 
 	}
 
 	.postDate {
 
-		margin-top: 1em;
-
-		font-size: .7em;
-
-	}
-
-	.postBody {
-
-		font-size: 1em;
-
-	}
-
-	.postFigure {
-
-		display: block;
-
-		margin: 4em auto;
-
-	}
-
-	.postFigCaption {
-
-		font-size: .9em;
-		margin: 2em 0;
 		margin-top: .8em;
+		margin-bottom: 1em;
+
+		font-size: .4em;
+
 	}
-	
-	.postImgRight {
-
-		float: none;
-
-		display: block;
-		margin: 0 auto;
-	}
-
 
 }
 
 @media all and (min-width: 1100px) {
 
-	.portfolioLink {
+	.postSection {
 
-		font-size: 1em;
+		margin-bottom: 10em;
+	}
+
+	.postTitle {
+
+		font-size: 3.5em;
 
 	}
 
-	.portfolioLink:after {
+	.postDate {
 
-		content: " Portfolio";
+		font-size: .35em;
+
+	}
+
+	.postBody {
+
+		font-size: 1.2em;
 
 	}
 
 }
 
+@media all and (min-width: 1400px) {
+
+	.postSection {
+
+		max-width: 800px;
+	}
+
+	.postTitle {
+
+		font-size: 4em;
+	}
+
+	.postBody {
+
+		font-size: 1.3em;
+	}
+
+}
+
+@media all and (min-width: 1600px) {
+
+	.postSection {
+
+		max-width: 900px;
+	}
+
+}
