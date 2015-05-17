@@ -165,13 +165,6 @@ body {
 
 @media all and (min-width: 1200px) {
 
-	.postSection {
-
-		margin-bottom: 10em;
-
-		max-width: 900px;
-	}
-
 	.postTitle {
 
 		font-size: 3.1em;
