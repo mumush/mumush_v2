@@ -23,7 +23,7 @@ body {
 
 	font-family: "Merriweather";
 
-	font-size: 1.9em;
+	font-size: 2em;
 
 	color: #33332D;
 }
@@ -49,9 +49,9 @@ body {
 	font-family: "Merriweather";
 
 	font-weight: 300;
-	font-size: 1.1em;
+	font-size: 1em;
 
-	line-height: 1.8em;
+	line-height: 1.6em;
 
 	color: #33332D;
 
@@ -153,12 +153,17 @@ body {
 
 	.postTitle {
 
-		font-size: 2.5em;
+		font-size: 2.3em;
 	}
 
 	.postDate {
 
-		font-size: .35em;
+		font-size: .4em;
+	}
+
+	.postBody {
+
+		line-height: 1.7em;
 	}
 
 }
@@ -166,7 +171,12 @@ body {
 @media all and (min-width: 1200px) {
 
 	.postTitle {
-		font-size: 2.8em;
+		font-size: 2.6em;
+	}
+
+	.postBody {
+
+		font-size: 1.1em;
 	}
 
 }
