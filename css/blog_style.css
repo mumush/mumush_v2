@@ -67,19 +67,19 @@ body {
 	color: #33332D;
 	text-decoration: none;
 
-	border-bottom: 1px dashed #33332D;
+	border-bottom: 1px solid #33332D;
 }
 
 .postBody a:hover {
 
-	border-bottom-style: solid;
+	border-bottom-style: dashed;
 }
 
 .postImportantText {
 
-	font-family: "Merriweather";
+	padding: 3px;
 
-	font-weight: 400;
+	background: #eee;
 }
 
 .postCodeExample {

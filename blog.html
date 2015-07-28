@@ -25,6 +25,195 @@
 
 		<section class="postSection">
 
+			<h2 class="postTitle">Context Awareness<span class="postDate">July 27, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					I've been doing a lot of ideation lately, and one of the biggest findings was that the Watch can be context aware of what is happening in the mobile companion app.  <span class="postImportantText">The Watch becomes extremely useful as a context aware reference point for information that would be too bothersome to take your phone out and get yourself</span>.  Instead, the Watch surfaces it for you.
+				</p>
+
+				<p>
+					Think about a scenario in which you're looking at your phone to check the bus schedule.  You then lock your phone, and continue to walk towards the bus stop.  As you raise your wrist to glance at the time, you press the Digital Crown, which then takes you not to the home screen, but instead immediately to the companion bus watch app.  It shows you only the most important information &mdash; the time the bus you were just looking at in the mobile app is going to arrive, and whether or not it's early or late.
+				</p>
+
+				<p>
+					We can extend the bus example further to touch on the benefits of time-sensitive notifications:  I usually start to walk to the bus stop around 6:30, in order to catch the bus by 7:00, but its arrival time fluctuates.  So how do I know if the bus is early, on-time, or late?  Well, I open the app to find out.  But what if the app merely sent you a notification saying "Hey dude, hurry up!  Your bus is early and will be here in 9 minutes."  <span class="postImportantText">The beauty here is that you as the user didn't have to go out and get that crucial information, it instead came to you through a tap on the wrist,</span> and it could be the difference between you waiting another hour for the next bus in a sour mood.
+				</p>
+
+				<p>
+					It seems like this context, or flow aware, use case of the Watch can have huge implications on how we access data, and even more so, how that data can come to us on the raise of our wrist.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Lift v1 Update<span class="postDate">July 26, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					In the spirit of coming up with one-word names, I landed on Lift for my workout Watch app.  As I mentioned a few days ago, not being able to use it in the real world has been super annoying because the whole point of this app is to make my life in the gym easier when it comes to checking what exercise I have next, or how many sets I have to go.  Regardless, I just finished the first iteration and I'm eager to find a way to get it on my Watch, whether that means doing some hacky Xcode trick or not.  Here's two shots of the app in the simulator, but I'm expecting both size and spacing to change once I see how things feel on device.
+				</p>
+
+				<div class="postCompareFigures">
+					<figure class="postFigure" style="margin: 0 1em">
+						<img class="" src="img/blog_images/liftv1_above.png" alt="Lift v1 Above Bezel">
+						<figcaption class="postFigCaption">Above the Bezel</figcaption>
+					</figure>
+
+					<figure class="postFigure" style="margin: 0 1em">
+						<img class="" src="img/blog_images/liftv1_below.png" alt="Lift v1 Below Bezel">
+						<figcaption class="postFigCaption">Below the Bezel</figcaption>
+					</figure>
+				</div>
+
+				<p>
+					Originally, I wanted to have a table with each muscle group (chest, legs, etc.), and then upon tapping one, you'd be taken to a page-based navigation view that allowed you to swipe through each of the exercises in order (which is why page-based navigation made sense), as well as showing the rep/set count respectively.
+				</p>
+				<p>
+					As I mentioned a few days ago, finding out that you can't mix the two of these navigation schemes led me back to Sketch, in which I eventually landed on the above screenshot.  This was sort of a blessing in disguise, as I had thought the list of muscles would be a little bit bland, so taking this page-based approach provided the opportunity for a big visual.  As you scroll the page down, you are then presented with a list of muscle specific exercises along with their rep/set counts.
+				</p>
+				<p>
+					I was initially concerned that page-based navigation wouldn't make sense in this format, however it does.  The reason for that, is because I work on the same muscle group every Monday &mdash; my chest, which is the first page in the navigation.  Because I do the first page (chest) on Monday, and the second page (back) on Tuesday, this sequential mapping of muscles and days of the week makes a lot of sense.  The list of exercises is quite close to what you see in the Weather app as you scroll down, however I'm thinking that when I end up using the app in the gym, I'll find that the list styling needs to be tweaked.
+				</p>
+				<p>
+					As I press on to make the icon, I'm thinking about looking into the other watchOS2 API's especially what's available in HealthKit.  It'll be interesting to look into what cool stuff you can do with heartrate.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Watch Hierarchy<span class="postDate">July 24, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					As I've been going through the design process for my Watch apps, both in and outside of work, I find that there is one common question that I keep coming back to: "What's the most important information to the user?"  It seems obvious now that I type it out, but I can't believe how much time I've spent thinking about what content should be placed "above the bezel (fold)," and how that content is hierarchically different from other content on the screen.  Content really is king on the Watch.
+				</p>
+				<p>
+					When I first started to work with notifications, which seem like a gimmick until you actually live with them (they're great), I used the Calendar's <a href="https://developer.apple.com/watch/human-interface-guidelines/app-components/" target="_blank">Long Look Notification</a> as a template for text-based hierarchy.  It does a great job of using color, weight, size, and space to define hierarchy, whilst also ensuring only the most important text is displayed.
+				</p>
+				<p>
+					It's been really interesting, spending time thinking about the correct balance between type size, weight, color, and space.  <span class="postImportantText">The watch's dimensions are such a good constraint that they force you to choose your words carefully</span> &mdash; yet another thing that I took for granted prior to starting to work with the Watch.
+				</p>
+
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Watch OS Beta Issues<span class="postDate">July 22, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					In order to take advantage of the newest functionality available in the next version of watchOS, I really want to get the watchOS2 beta installed on my Watch so that I can build my apps to my Apple Watch rather than the Watch Simulator.  Early on it's okay to use the Simulator to test functionality, but once you get into the visuals component and font sizes you really need to see things on the real thing.
+				</p>
+				<p>
+					I've been unable to successfully build a watch app to my own Apple Watch both at home, and in work &mdash; which is super frustrating because I really need to see how things look on device.  Every time I attempt to build and run the app, I either get a spinning progress black screen for 10+ minutes, or the app launches and immediately crashes.  Apparently I'm not alone on this, so I guess that makes me feel a bit better, but it's extremely inconvenient because I really want to use my workout app in the gym!
+				</p>
+				<p>
+					If I find a solution I'll definitely post about it, but for now I'll just have to deal with running in the Simulator.  I haven't made a ton of progress on my workout app as I've been quite busy in work, but I'm thinking I'll be done with it this weekend so that I can post some screenshots.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Building the Watch App<span class="postDate">July 21, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					I've never been an early adopter of devices, especially devices that you can build apps for, so this experience was very new, yet super cool for me.  Digging into the documentation as well as some tutorials I found that the development process was much, much simpler than building an iOS app.  It's crazy that there are so many limitations to what you can do on the Watch, but I totally understand why.
+				</p>
+				<p>
+					After mocking up the app in Sketch, my original thought was to have a list with each body part (chest, back, legs, etc.), and tapping on any of those list items would take you to a page-based view that allowed you to swipe through each of the exercises and see the name as well as the set/rep count.  After trying to make it happen, I was stunned to find out that navigation can be either page-based, or hierarchical &mdash; one or the other, not both.
+				</p>
+				<p>
+					Of course that sent me back to the drawing board, at which point I landed on a pattern similar to that of the Weather app, where page-based navigation is used.  Except in this instance the name of the body part as well as a glyph of it is displayed above the fold, and when you scroll down you see a list of the exercises along with set/rep counts.  I'll post an image of what I have soon!
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Watch & Gym<span class="postDate">July 20, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					Being immersed in the Watch world is tough because I really wanted to find a novel use case that could make a watch app better than than the companion iPhone app.  But I realized that the Watch isn't here to take down the phone, it's here to work in tandem with it, and I found this out first hand at the gym a few days ago.
+				</p>
+				<p>
+					Briefly, my process at the gym is to workout with music playing on my phone, and also have a website up in Safari that shows what exercises to do on which days.  In a normal gym session, I'll choose one of my current favorite songs, lock my phone, and continue working out.  As I finish a set of the current exercise, and pay close attention to these steps: <span class="postImportantText">I go into my pocket and grab my phone, hit the home/wake button, slide to unlock it/enter my password if touch id isn't working, hit the home button to jump out of the music app, switch into Safari, and then look at what exercise I have next</span>.  From there I'll likely choose a new song in the Music app, and thus the cycle continues.  But what's wrong with this?
+				</p>
+				<p>
+					Well, it's annoying.  It's something that always bugged me because I hated have to always toggle between those two apps.  It's important to note here how minor of an inconvenience this is.  The existing interaction is requiring me to do a bit more work on my phone.  But the process quickly becomes rote, and stale as I go to the gym every day.  This is where the Watch comes in.
+				</p>
+				<p>
+					I realized that it would be awesome if I had a Watch app that simply showed me what exercises I had each day &mdash; exactly what the website did, but this time on my wrist.  The funny part about this is that it's so hard to pitch the benefits until you actually live through the pain points, so I'm really happy that I did.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Using Apple Watch<span class="postDate">July 19, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					Before making any blind design decisions, I thought it would be a good idea (and a good excuse) to purchase an Apple Watch in order to get a deeper understanding of the overall experience.  I've been using the Watch for close to 3 weeks now, and it's been an interesting ride.
+				</p>
+				<p>
+					The first day I wore it to work, in the real world, I had quite a few exciting moments that really made me appreciate parts of the experience.  The use of haptics along with the Taptic Engine feels phenominal &mdash; it's genuinely unlike anything I have ever experienced, and made receiving notifications just feel really pleasant.  But aside from notifications, I honestly had a "So now what?" type of feeling because I really couldn't figure out how the Watch was more useful than my phone.  This is the root of all unrealistic conceptions of the Watch &mdash; and the reason why no one think it's useful.
+				</p>
+				<p>
+					When the iPad was first revealed, I scoffed at it: "Why would you get an iPad when you can just use your phone or laptop?"  The thing is, the iPad <span class="postImportantText">isn't your iPhone, and it's not your laptop either</span>.  It's a niche product that makes for a better experience purely due to convenience &mdash; the Watch is in the exact same boat, but has much higher aspirations.
+				</p>
+				<p>
+					Getting past the reality that it's not a phone, and doesn't embody nearly the amount of functionality or screen real estate is super important.  It's a watch.  It needs to be small and unobtrusive.  So what can you put on a screen that small?  Only the most important content.
+				</p>
+				<p>
+					I think the Weather app is the best example of what a Watch app should aspire to be.  It immediately shows a rich visual with the most important information &mdash; the temperature right now.  As you scroll down you're able to see hourly temperatures as well as highs and lows.  This was a great example of hierarchy in a Watch app.  The app also uses page based navigation, which allows users to swipe left and right in a sequential manner rather than a hierarchical drill down that most smartphone users are accustomed to.  To me, the page-based navigation seems to work better as it feels super smooth, and doesn't require you to tap the back button that you would deal with in a hierarchical navigation.  This is great because the touch targets on the watch are very small, so fat-fingering is a real issue.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">In Comes the Watch<span class="postDate">July 18, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					During my internship, I've been able to explore the applications of the smartwatch, and the pain points that it can potentially remedy.  Through research, ideation, and development, I've learned a lot about the implications of the smartwatch and how it's working to create a better, more information driven experience.  I plan to post all of my findings here.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
 			<h2 class="postTitle">Leveraging Z-Space<span class="postDate">May 4, 2015</span></h2>
 
 			<article class="postBody">
