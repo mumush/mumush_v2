@@ -25,6 +25,62 @@
 
 		<section class="postSection">
 
+			<h2 class="postTitle">Watch & Objective-C<span class="postDate">August 1, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					The earlier part of last week was difficult because I couldn't seem to find a way to build my app to device.  After scouring the Apple Dev Forums, I came across what seemed to be a complete shot in the dark: Write the app in Objective-C instead of Swift, and it will build to device.  At that point, I would have done anything to get the app on device, because I really needed to see what the experience felt like, so without much hesitation, it was time to learn some Objective-C to make it happen.
+				</p>
+				<p>
+					This was really cool, because I had no prior experience with Objective-C past reading documentation, but also because this weird scenario was what forced me into the realm of Objective-C &mdash; a language that I likely wouldn't haven't delved into otherwise.
+				</p>
+				<p>
+					By the end of the week I had my original app rewritten in Objective-C, running on my Watch, and a better understanding of Objective-C.  It was a good way to end the week.  Come Monday, it'll be time for refinements and some field testing.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Connectivity<span class="postDate">July 29, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					The goal of this Watch prototype is to get as close to what the production experience could be like if a Watch app were to be built as a companion to the mobile app.  Because of the Watch's ability to surface context, time, and location sensitive notifications/alerts, I plan to bake those into a prototype experience that's as real as possible. </p>
+				<p>
+					In the field, I'll give a user my Watch with the prototype app installed (the Watch will still be paired to my phone).  I'll follow the user through the test scenario, and unbeknownst to them, I'll be using the companion iOS app on my phone to send time/location/flow-based notifications &mdash; sort of like a remote control.
+				</p>
+				<p>
+					The iOS app has an interface with a number of buttons, each of which map to a specific notification that correlates to where the user is in the application flow.  When I press a specific button, a UILocalNotification is fired off, and all I need to do is lock the phone in order to surface the notification on the Watch &mdash; which works out perfectly for the test scenario.
+				</p>
+				<p>
+					I also used WatchConnectivity to allow for other communication between the iOS app and Watch if that need should ever arise.  Once again, the WWDC videos were super helpful, and definitely gave me a better understanding of the framework.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
+			<h2 class="postTitle">Spacer Groups<span class="postDate">July 28, 2015</span></h2>
+
+			<article class="postBody">
+
+				<p>
+					Not being able to test my Watch apps on my actual watch has been tough, so in the meantime I've started to dig deeper into the intricacies of WatchKit.  After watching some of the <a href="https://developer.apple.com/videos/wwdc/2015/" target="_blank">WWDC15 WatchKit Session Videos</a> related to the new animation API's available, I came across the application of "spacer groups."  These are groups used in your interface that are invisible, and have no content, but serve one main purpose: to aid animation.  Because there's no access to coordinate (x,y) values for interface components, you instead adjust the size of spacer groups in between two components you want to animate.  Pretty cool.
+				</p>
+
+			</article>
+
+		</section>
+
+		<section class="postSection">
+
 			<h2 class="postTitle">Context Awareness<span class="postDate">July 27, 2015</span></h2>
 
 			<article class="postBody">
